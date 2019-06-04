@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Table from './Layout/Table';
+import Infos from './Layout/Infos';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router basename='/PiloteMedia-Geolia'>
+        <Switch>
+          <Route path="/" exact render={()=>(<Table />)} />
+          <Route path="/Infos/:id" component={Infos} />
+        </Switch>
+      </Router>
     </div>
   );
 }
