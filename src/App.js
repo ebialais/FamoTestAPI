@@ -7,7 +7,7 @@ import Infos from './Layout/Infos';
 function App() {
   return (
     <div className="App">
-      <Router basename='/PiloteMedia-Geolia'>
+      <Router basename='/Harvard-Art-Museum'>
         <Switch>
           <Route path="/" exact render={()=>(<Table />)} />
           <Route path="/Infos/:id" component={Infos} />
