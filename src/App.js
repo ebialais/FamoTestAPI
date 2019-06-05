@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './Layout/Home';
-import Infos from './Layout/Infos';
+import Home from './Layout/Home/Home';
+import Infos from './Layout/Info/Infos';
 
 function App() {
   return (

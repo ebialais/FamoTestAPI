@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import TablePag from '../Components/Table/Table'
+import TablePag from '../../Components/Table/Table';
+import './Home.css';
+import Loader from '../../Components/Loader/Loader';
 
 export default class Home extends Component {
     constructor(props) {
@@ -15,7 +17,9 @@ export default class Home extends Component {
 
     componentDidMount() { 
         const Key = 'DJSMWWb3Ire4KJmZFdkAmo5FGS116cCj';
-        axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?countryCode=BE&apikey=`+Key+`&size=100&page=${this.state.page}`)
+        axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?countryCode=BE&apikey=`
+                    +Key
+                    +`&size=100&page=${this.state.page}`)
         .then(
         (result) => {
             const items = this.state.items
@@ -35,16 +39,18 @@ export default class Home extends Component {
     }
 
     render (){
-        const { error, isLoaded } = this.state;
+        const { error, isLoaded, items } = this.state;
         if (error) {
             return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {
-            return <div>Loading...</div>;
+            return <Loader />;
         } else {
             return (
-                <TablePag 
-                    items={this.state.items[0]} 
-                />
+                <div id="Home">
+                    <TablePag 
+                        items={items[0]} 
+                    />
+                </div>
             )
         }
     }

@@ -1,3 +1,33 @@
+
+.TableRow {
+    height: 120px;
+    border-bottom: 1px solid rgba(224, 224, 224, 1);
+}
+.MuiTableCell-root {
+    height: 100px;
+    border: none !important;
+    padding: 0 !important;
+    /* align-self: center !important; */
+}
+#divImg {
+    width: 150px;
+    height: 100px;
+    float: right;
+}
 #imageCell {
     width: 150px;
+    margin-top: 50px;
+    transform: translateY(-50%);
+}
+
+.routeInfos{
+    text-decoration: none;
+    display: block;
+    color: inherit;
+    padding: 5px 10px;
+    width: inherit;
+    height: inherit;
+    display: flex;
+    align-items: center !important;
+    padding: 0 20px;
 }

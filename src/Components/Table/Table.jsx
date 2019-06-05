@@ -13,6 +13,8 @@ import FirstPageIcon from '@material-ui/icons/FirstPage';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import LastPageIcon from '@material-ui/icons/LastPage';
+import Loader from '../Loader/Loader';
+import { Link } from 'react-router-dom';
 import './Table.css';
 
 const useStyles1 = makeStyles(theme => ({
@@ -110,25 +112,32 @@ function TablePag(props) {
         setRowsPerPage(parseInt(event.target.value, 10));
     }
 
-    console.log(page * rowsPerPage, page * rowsPerPage + rowsPerPage);
+    // console.log(props.items);
 
     return (
         <Paper className={classes.root}>
             <div className={classes.tableWrapper}>
                 <Table className={classes.table}>
                     <TableBody>
-                        {props.items === [] ? "is Lodaing..." : props.items.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(item => (
-                            console.log(props),
-                            <TableRow key={ item.id } hover={ true } >
-                                <TableCell align="right">
-                                    {item.dates.start.localDate} : {item.dates.start.localTime}
-                                </TableCell>
-                                <TableCell component="th" scope="row">
-                                    {item.name}
-                                </TableCell>
-                                <TableCell align="right">
-                                    { item.images && item.images.length > 0 ? <img src={item.images[0].url}  id="imageCell" /> : "Pas d'image" }
-                                </TableCell>
+                        {props.items === [] ? <Loader /> : props.items.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(item => (
+                            <TableRow key={ item.id } hover={ true } className="TableRow" >
+                                    <TableCell align="right"  >
+                                        <Link to={`/Infos/${item.id}`} className="routeInfos">
+                                            {item.dates.start.localDate} : {item.dates.start.localTime}
+                                        </Link>
+                                    </TableCell>
+                                    <TableCell component="th" scope="row">
+                                        <Link to={`/Infos/${item.id}`} className="routeInfos">
+                                            {item.name}
+                                        </Link>
+                                    </TableCell>
+                                    <TableCell align="right">
+                                        <Link to={`/Infos/${item.id}`} className="routeInfos">
+                                            <div id="divImg">
+                                                { item.images && item.images.length > 0 ? <img src={item.images[0].url}  id="imageCell" alt={item.name} /> : "Pas d'image" }
+                                            </div>
+                                        </Link>
+                                    </TableCell>
                             </TableRow> 
                         ))}
 
