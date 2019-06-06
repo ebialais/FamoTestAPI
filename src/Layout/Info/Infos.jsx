@@ -58,8 +58,8 @@ export default class Infos extends Component {
                 )}
                 <h1>{item[0].name}</h1>
                 <p>{getDate(item[0].dates.start.localDate)}</p>
-                <ChipsArray
-                    genres={item[0].classifications}
+                <ChipsArray 
+                    items={item[0].classifications} 
                 />
             </div>
         )}
