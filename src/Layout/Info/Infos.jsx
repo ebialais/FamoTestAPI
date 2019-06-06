@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Loader from '../../Components/Loader/Loader';
 import './Infos.css';
+import getDate from '../../Util/getDate';
+import ChipsArray from '../../Components/Chip/Chip';
 
 export default class Infos extends Component {
     constructor(props) {
@@ -55,7 +57,10 @@ export default class Infos extends Component {
                                             />
                 )}
                 <h1>{item[0].name}</h1>
-                <p>{item[0].dates.start.localDate}</p>
+                <p>{getDate(item[0].dates.start.localDate)}</p>
+                <ChipsArray
+                    genres={item[0].classifications}
+                />
             </div>
         )}
     }
