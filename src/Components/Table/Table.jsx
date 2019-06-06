@@ -112,7 +112,7 @@ function TablePag(props) {
         setRowsPerPage(parseInt(event.target.value, 10));
     }
 
-    console.log(props.items);
+    // console.log(props.items);
 
     return (
         <Paper className={classes.root}>

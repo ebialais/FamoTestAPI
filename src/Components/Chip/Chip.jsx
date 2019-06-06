@@ -18,7 +18,6 @@ const useStyles = makeStyles(theme => ({
 function ChipsArray(props) {
     const classes = useStyles();
     const { items } = props;
-    console.log(items)
 
     return (
         <Paper className={classes.root}>
@@ -27,6 +26,24 @@ function ChipsArray(props) {
                 <Chip
                     key={item.genre.id}
                     label={item.genre.name}
+                    className={classes.chip}
+                />
+                );
+            })}
+            {items.map(item => {
+                return (
+                <Chip
+                    key={item.segment.id}
+                    label={item.segment.name}
+                    className={classes.chip}
+                />
+                );
+            })}
+            {items.map(item => {
+                return (
+                <Chip
+                    key={item.subGenre.id}
+                    label={item.subGenre.name}
                     className={classes.chip}
                 />
                 );

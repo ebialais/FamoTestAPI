@@ -42,6 +42,5 @@ export default function getDate(date){
             break;
     }
     newDate = day + " " + month + " " + year
-    console.log(newDate)
     return newDate
 }

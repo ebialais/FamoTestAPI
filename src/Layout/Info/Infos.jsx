@@ -4,6 +4,8 @@ import Loader from '../../Components/Loader/Loader';
 import './Infos.css';
 import getDate from '../../Util/getDate';
 import ChipsArray from '../../Components/Chip/Chip';
+import PriceTable from '../../Components/Prices/Prices';
+import Button from '../../Components/Button/Button';
 
 export default class Infos extends Component {
     constructor(props) {
@@ -58,9 +60,31 @@ export default class Infos extends Component {
                 )}
                 <h1>{item[0].name}</h1>
                 <p>{getDate(item[0].dates.start.localDate)}</p>
+                <h3>{item[0]._embedded.venues[0].name}</h3>
+                <div id="address">
+                    <p>
+                        {item[0]._embedded.venues[0].address.line1  + ", "}
+                        {item[0]._embedded.venues[0].postalCode + " "} 
+                        {item[0]._embedded.venues[0].city.name + "."}
+                    </p>
+                </div>
                 <ChipsArray 
                     items={item[0].classifications} 
                 />
+                <h4>Prix :</h4>
+                <PriceTable 
+                    prices={item[0].priceRanges}
+                />
+                <h4>
+                    {"En vente du " + getDate(item[0].sales.public.startDateTime) + " au " + getDate(item[0].sales.public.endDateTime)}
+                </h4>
+                <Button 
+                    link={item[0].url}
+                />
+                {/* <p> 
+                    sur  
+                    <a href={item[0].url}>TicketMaster</a>
+                </p> */}
             </div>
         )}
     }
