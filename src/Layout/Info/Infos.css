@@ -1,3 +1,39 @@
+#Infos {
+    margin: 0;
+    padding: 0;
+}
 #infosImg{
     width: 100vw;
+}
+#InfosContent{
+    width: 100vw;
+}
+#PriceTable{
+    width: 70vw;
+    margin: auto;
+}
+#InfosName {
+    height: 100px;
+    line-height: 100px;
+    width: 100vw;
+    margin: -75px 0 0 0;
+    Background-color: #95cc41;
+    color: white;
+}
+#InfosDate {
+    margin-top: 70px;
+    padding-top: 60px;
+}
+#InfosPlace {
+    margin-top: 40px;
+}
+#InfosAddress{
+    margin-top: 40px;
+}
+#InfosChip{
+    width: 70vw;
+    margin: 70px auto;
+}
+#InfosPrice {
+    margin-top: 70px;
 }

@@ -1,4 +1,21 @@
 #Home {
-    width: 80vw;
-    margin: auto;
+    width: 100vw;
+}
+#Table {
+    width: 80vw !important;
+    margin: 60px auto;
+    min-width: 500px;
+}
+.Header{
+    width: 100vw;
+    margin: 0;
+    height: 80px;
+    line-height: 80px;
+    background-color: #95cc41;
+    color: white;
+    padding: 5px;
+}
+h1 {
+    margin: 0 0 0 60px;
+    float: left;
 }

@@ -13,17 +13,20 @@
     padding: 0 !important;
     /* align-self: center !important; */
 }
+.MuiTableCell-root:last-child{
+    width: 150px !important;
+    /* text-align: center !important; */
+}
 #divImg {
-    width: 150px;
+    width: 142px;
     height: 100px;
-    float: right;
 }
 #imageCell {
     width: 150px;
     margin-top: 50px;
     transform: translateY(-50%);
 }
-.routeInfos{
+.routeInfos {
     text-decoration: none;
     display: block;
     color: inherit;
@@ -33,4 +36,21 @@
     display: flex;
     align-items: center !important;
     padding: 0 20px;
+}
+#paginationRow {
+    width: 80vw;
+    height: 80px;
+}
+#paginationCell{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 1vw;
+}
+.MuiFab-root {
+    width: 40px !important;
+    height: 40px !important;
+}
+.MuiFab-root.Mui-disabled{
+    opacity: 0.3;
 }

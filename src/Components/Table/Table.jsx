@@ -16,6 +16,8 @@ import LastPageIcon from '@material-ui/icons/LastPage';
 import Loader from '../Loader/Loader';
 import { Link } from 'react-router-dom';
 import './Table.css';
+import getDate from '../../Util/getDate';
+import Fab from '@material-ui/core/Fab';
 
 const useStyles1 = makeStyles(theme => ({
     root: {
@@ -26,63 +28,62 @@ const useStyles1 = makeStyles(theme => ({
 }));
 
 
-function TablePaginationActions(props) {
-    const classes = useStyles1();
-    const theme = useTheme();
-    const { count, rowsPerPage, onChangePage, page } = props;
+// function TablePaginationActions(props) {
+//     const classes = useStyles1();
+//     const theme = useTheme();
+//     const { count, rowsPerPage, onChangePage, page } = props;
 
-    function handleFirstPageButtonClick(event) {
-        onChangePage(event, 0);
-    }
+//     function handleFirstPageButtonClick(event) {
+//         onChangePage(event, 0);
+//     }
 
-    function handleBackButtonClick(event) {
-        onChangePage(event, page - 1);
-    }
+//     function handleBackButtonClick(event) {
+//         onChangePage(event, page - 1);
+//     }
 
-    function handleNextButtonClick(event) {
-        onChangePage(event, page + 1);
-    }
+//     function handleNextButtonClick(event) {
+//         onChangePage(event, page + 1);
+//     }
 
-    function handleLastPageButtonClick(event) {
-        onChangePage(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
-    }
+//     function handleLastPageButtonClick(event) {
+//         onChangePage(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
+//     }
+//     return (
+//         <div className={classes.root}>
+//             <IconButton
+//                 onClick={handleFirstPageButtonClick}
+//                 disabled={page === 0}
+//                 aria-label="First Page"
+//             >
+//                 {theme.direction === 'rtl' ? <LastPageIcon /> : <FirstPageIcon />}
+//             </IconButton>
+//             <IconButton onClick={handleBackButtonClick} disabled={page === 0} aria-label="Previous Page">
+//                 {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
+//             </IconButton>
+//             <IconButton
+//                 onClick={handleNextButtonClick}
+//                 disabled={page >= Math.ceil(count / rowsPerPage) - 1}
+//                 aria-label="Next Page"
+//             >
+//                 {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
+//             </IconButton>
+//             <IconButton
+//                 onClick={handleLastPageButtonClick}
+//                 disabled={page >= Math.ceil(count / rowsPerPage) - 1}
+//                 aria-label="Last Page"
+//             >
+//                 {theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />}
+//             </IconButton>
+//         </div>
+//     );
+// }
 
-    return (
-        <div className={classes.root}>
-            <IconButton
-                onClick={handleFirstPageButtonClick}
-                disabled={page === 0}
-                aria-label="First Page"
-            >
-                {theme.direction === 'rtl' ? <LastPageIcon /> : <FirstPageIcon />}
-            </IconButton>
-            <IconButton onClick={handleBackButtonClick} disabled={page === 0} aria-label="Previous Page">
-                {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
-            </IconButton>
-            <IconButton
-                onClick={handleNextButtonClick}
-                disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-                aria-label="Next Page"
-            >
-                {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
-            </IconButton>
-            <IconButton
-                onClick={handleLastPageButtonClick}
-                disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-                aria-label="Last Page"
-            >
-                {theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />}
-            </IconButton>
-        </div>
-    );
-}
-
-TablePaginationActions.propTypes = {
-    count: PropTypes.number.isRequired,
-    onChangePage: PropTypes.func.isRequired,
-    page: PropTypes.number.isRequired,
-    rowsPerPage: PropTypes.number.isRequired,
-};
+// TablePaginationActions.propTypes = {
+//     count: PropTypes.number.isRequired,
+//     onChangePage: PropTypes.func.isRequired,
+//     page: PropTypes.number.isRequired,
+//     rowsPerPage: PropTypes.number.isRequired,
+// };
 
 const useStyles2 = makeStyles(theme => ({
     root: {
@@ -98,32 +99,47 @@ const useStyles2 = makeStyles(theme => ({
 }));
 
 function TablePag(props) {
+    const { updatePage, pageInit, items, recherche } = props
     const classes = useStyles2();
-    const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(5);
-
-    const emptyRows = rowsPerPage - Math.min(rowsPerPage, props.items.length - page * rowsPerPage);
-
-    function handleChangePage(event, newPage) {
-        setPage(newPage);
+    
+    function goBack(){
+        let newPage = pageInit - 1
+        updatePage(newPage)
     }
-
-    function handleChangeRowsPerPage(event) {
-        setRowsPerPage(parseInt(event.target.value, 10));
+    function goNext(){
+        let newPage = pageInit + 1
+        updatePage(newPage)
     }
+    // function goUpdate (){
+    //     updatePage(page)
+    //     console.log("coucou2", page)
+    // }
 
-    // console.log(props.items);
+    // const emptyRows = rowsPerPage - Math.min(rowsPerPage, props.items.length - page * rowsPerPage);
 
+    // function handleChangePage(event, newPage) {
+    //     setPage(newPage);
+    // }
+
+    // function handleChangeRowsPerPage(event) {
+    //     setRowsPerPage(parseInt(event.target.value, 10));
+    // }
+
+    let itemsFiltered = items.filter(item => {
+        let search = item.name + " " + item._embedded.venues[0].name
+        return search.toLowerCase().includes(recherche)
+    })
     return (
         <Paper className={classes.root}>
             <div className={classes.tableWrapper}>
-                <Table className={classes.table}>
+                <Table  className={classes.table}>
                     <TableBody>
-                        {props.items === [] ? <Loader /> : props.items.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(item => (
+                        {items === [] ? <Loader /> : itemsFiltered.map(item => (
+                            console.log(item.name),
                             <TableRow key={ item.id } hover={ true } className="TableRow" >
                                     <TableCell align="right"  >
                                         <Link to={`/Infos/${item.id}`} className="routeInfos">
-                                            {item.dates.start.localDate} : {item.dates.start.localTime}
+                                            {getDate(item.dates.start.localDate)}
                                         </Link>
                                     </TableCell>
                                     <TableCell component="th" scope="row">
@@ -131,25 +147,32 @@ function TablePag(props) {
                                             {item.name}
                                         </Link>
                                     </TableCell>
-                                    <TableCell align="right">
+                                    <TableCell align="right" className="lastCell">
                                         <Link to={`/Infos/${item.id}`} className="routeInfos">
                                             <div id="divImg">
-                                                { item.images && item.images.length > 0 ? <img src={item.images[0].url}  id="imageCell" alt={item.name} /> : "Pas d'image" }
+                                                { item.images && item.images.length > 0 ? 
+                                                <img src={item.images[0].url}  id="imageCell" alt={item.name} /> : 
+                                                "Pas d'image" }
                                             </div>
                                         </Link>
                                     </TableCell>
                             </TableRow> 
                         ))}
-
-                        {emptyRows > 0 && (
-                            <TableRow style={{ height: 48 * emptyRows }}>
-                                <TableCell colSpan={6} />
-                            </TableRow>
-                        )}
                     </TableBody>
                     <TableFooter>
-                        <TableRow>
-                            <TablePagination
+                        <TableRow id="paginationRow">
+                            <TableCell></TableCell>
+                            <TableCell></TableCell>
+                            <TableCell id="paginationCell">
+                                <Fab onClick={() => goBack()} className="tabButton" disabled={pageInit === 0}>
+                                    <img src="/assets/backIcon.svg" />
+                                </Fab>
+                                <div>{pageInit}</div>
+                                <Fab onClick={() => goNext()} className="tabButton">
+                                    <img src="/assets/nextIcon.svg" />
+                                </Fab>
+                            </TableCell>
+                            {/* <TablePagination
                                 rowsPerPageOptions={[5, 10, 25]}
                                 colSpan={3}
                                 count={props.items.length}
@@ -162,7 +185,7 @@ function TablePag(props) {
                                 onChangePage={handleChangePage}
                                 onChangeRowsPerPage={handleChangeRowsPerPage}
                                 ActionsComponent={TablePaginationActions}
-                            />
+                            /> */}
                         </TableRow>
                     </TableFooter>
                 </Table>

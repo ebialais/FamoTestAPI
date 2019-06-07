@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Chip from '@material-ui/core/Chip';
-import Paper from '@material-ui/core/Paper';
+import './Chip.css';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -20,10 +20,11 @@ function ChipsArray(props) {
     const { items } = props;
 
     return (
-        <Paper className={classes.root}>
+        <div >
             {items.map(item => {
                 return (
-                <Chip
+                <Chip 
+                    id="Chips"
                     key={item.genre.id}
                     label={item.genre.name}
                     className={classes.chip}
@@ -32,23 +33,25 @@ function ChipsArray(props) {
             })}
             {items.map(item => {
                 return (
-                <Chip
-                    key={item.segment.id}
-                    label={item.segment.name}
-                    className={classes.chip}
-                />
+                    item.segment != null && <Chip 
+                                                id="Chips"
+                                                key={item.segment.id}
+                                                label={item.segment.name}
+                                                className={classes.chip}
+                                            />
                 );
             })}
             {items.map(item => {
                 return (
-                <Chip
-                    key={item.subGenre.id}
-                    label={item.subGenre.name}
-                    className={classes.chip}
-                />
+                    item.subGenre != null && <Chip 
+                                                id="Chips"
+                                                key={item.subGenre.id}
+                                                label={item.subGenre.name}
+                                                className={classes.chip}
+                                            />
                 );
             })}
-        </Paper>
+        </div>
     );
 }
 

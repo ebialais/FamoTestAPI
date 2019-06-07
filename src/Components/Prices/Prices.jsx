@@ -39,17 +39,17 @@ function PriceTable(props) {
             <Table className={classes.table}>
                 <TableHead>
                     <TableRow>
-                        <TableCell align="right">Type</TableCell>
-                        <TableCell align="right">Mini</TableCell>
-                        <TableCell align="right">Maxi</TableCell>
+                        <TableCell align="center">Type</TableCell>
+                        <TableCell align="center">Mini</TableCell>
+                        <TableCell align="center">Maxi</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {prices.map(price => (
+                    { prices != null && prices.map(price => (
                         <TableRow key={price.min}>
-                            <TableCell align="right">{price.type}</TableCell>
-                            <TableCell align="right">{price.min + " " + price.currency}</TableCell>
-                            <TableCell align="right">{price.max + " " + price.currency}</TableCell>
+                            <TableCell align="center">{price.type}</TableCell>
+                            <TableCell align="center">{price.min + " " + price.currency}</TableCell>
+                            <TableCell align="center">{price.max + " " + price.currency}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

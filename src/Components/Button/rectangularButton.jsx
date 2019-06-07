@@ -20,7 +20,7 @@ export default function ContainedButtons(props) {
             {/* <Button variant="contained" className={classes.button}>
                 Default
             </Button> */}
-            <Button variant="contained" color="primary" className={classes.button} href={link} target="_blank">
+            <Button variant="contained" style={{backgroundColor: "#95cc41", color: "white", marginBottom: "70px"}} className={classes.button} href={link} target="_blank">
                 Achetez sur TicketMaster
             </Button>
             {/* <Button variant="contained" color="secondary" className={classes.button}>
