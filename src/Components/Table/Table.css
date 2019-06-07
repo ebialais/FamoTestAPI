@@ -25,6 +25,7 @@
     width: 150px;
     margin-top: 50px;
     transform: translateY(-50%);
+    z-index: 0;
 }
 .routeInfos {
     text-decoration: none;

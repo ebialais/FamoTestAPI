@@ -3,7 +3,7 @@
 }
 #Table {
     width: 80vw !important;
-    margin: 60px auto;
+    margin: 120px auto;
     min-width: 500px;
 }
 .Header{
@@ -14,6 +14,10 @@
     background-color: #95cc41;
     color: white;
     padding: 5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 h1 {
     margin: 0 0 0 60px;

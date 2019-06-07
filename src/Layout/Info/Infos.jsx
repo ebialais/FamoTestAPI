@@ -6,8 +6,6 @@ import getDate from '../../Util/getDate';
 import ChipsArray from '../../Components/Chip/Chip';
 import PriceTable from '../../Components/Prices/Prices';
 import Button from '../../Components/Button/rectangularButton';
-// import FloatingButton from '../../Components/Button/floatingButton';
-// import createHistory from 'history/lib/createBrowserHistory';
 
 export default class Infos extends Component {
     constructor(props) {
@@ -32,7 +30,6 @@ export default class Infos extends Component {
             isLoaded: true,
             item: item
             });
-            // this.getImage();
         },
         (error) => {
             this.setState({
@@ -44,7 +41,6 @@ export default class Infos extends Component {
     }
     render (){
         const { error, isLoaded, item } = this.state;
-        // let history = createHistory();
         if (error) {
             return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {
@@ -53,9 +49,9 @@ export default class Infos extends Component {
             console.log(item[0])
             return (
             <div id="Infos">
-                {/* <FloatingButton 
-                    onCLick={history.goBack}
-                /> */}
+                <div className="Header">
+                    <h1>On stage</h1>
+                </div>
                 { item[0].images.map(image =>
                     image.width === 1136 && <img 
                                                 src={image.url} 

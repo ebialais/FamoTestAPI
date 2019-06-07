@@ -3,8 +3,6 @@ import axios from 'axios';
 import TablePag from '../../Components/Table/Table';
 import './Home.css';
 import Loader from '../../Components/Loader/Loader';
-import Header from '../../Components/Hearder/Header';
-// import callAPI from '../../Util/callAPI'
 
 export default class Home extends Component {
     constructor(props) {
@@ -21,13 +19,6 @@ export default class Home extends Component {
 
     componentDidMount() { 
         this.callAPI()
-        // this.setState({
-        //     items: items,
-        //     isLoaded: true,
-        //     // error,
-        // }, ()=>{
-        //     console.log(this.state.items)
-        // })
     }
     callAPI = () => {
         const Key = 'DJSMWWb3Ire4KJmZFdkAmo5FGS116cCj';

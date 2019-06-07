@@ -12,7 +12,7 @@ function App() {
       <Router basename='/TicketMaster'>
         <Switch>
           <Route path="/" exact render={()=>(<Home />)} />
-          <Route path="/Infos/:id" render={()=><Infos />} />
+          <Route path="/Infos/:id" component={Infos} />
         </Switch>
       </Router>
     </div>
