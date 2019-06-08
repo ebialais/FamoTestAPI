@@ -1,21 +1,24 @@
-
 .TableRow {
     height: 120px;
     border-bottom: 1px solid #e9e8e8;
+    
 }
 .TableRow:hover {
-    /* height: 130px; */
     box-shadow: 2px 2px  #a2d650;
 }
 .MuiTableCell-root {
     height: 100px;
     border: none !important;
     padding: 0 !important;
-    /* align-self: center !important; */
+}
+.middleCell {
+    font-weight: bold !important;
+}
+#name {
+    text-transform: uppercase;
 }
 .MuiTableCell-root:last-child{
     width: 150px !important;
-    /* text-align: center !important; */
 }
 #divImg {
     width: 142px;

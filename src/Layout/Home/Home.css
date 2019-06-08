@@ -1,3 +1,6 @@
+#Home {
+    width: 100vw;
+}
 .Header{
     position: fixed;
     top: 0;
@@ -17,14 +20,13 @@
 h1 {
     margin: 0 0 0 10vw;
     float: left;
+    font-family: 'Oxygen', sans-serif;
+    font-weight: bold;
 }
 #searchBar {
     width: 20vw;
     height: 25px;
     margin: 0 10vw 0 0;
-}
-#Home {
-    width: 100vw;
 }
 #Table {
     width: 80vw !important;

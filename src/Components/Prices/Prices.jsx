@@ -24,7 +24,7 @@ function PriceTable(props) {
 
     return (
         <Paper className={classes.root}>
-            <Table className={classes.table}>
+            <Table className={classes.table} size='small'>
                 <TableHead>
                     <TableRow>
                         <TableCell align="center">Type</TableCell>

@@ -26,10 +26,10 @@ const useStyles2 = makeStyles(theme => ({
 }));
 
 function TablePag(props) {
-    const { updatePage, pageInit, items, recherche, history } = props
+    const { updatePage, pageInit, items, totalPages } = props
     const classes = useStyles2();
     
-    function goBack(){
+    function goPreviousPageTable(){
         let newPage = pageInit - 1
         updatePage(newPage)
         window.scrollTo({
@@ -38,7 +38,7 @@ function TablePag(props) {
             behavior: 'smooth'
         })
     }
-    function goNext(){
+    function goNextPageTable(){
         let newPage = pageInit + 1
         updatePage(newPage)
         window.scrollTo({
@@ -48,25 +48,21 @@ function TablePag(props) {
         })
     }
 
-    let itemsFiltered = items.filter(item => {
-        let search = item.name
-        return search.toLowerCase().includes(recherche)
-    })
     return (
         <Paper className={classes.root}>
             <div className={classes.tableWrapper}>
                 <Table  className={classes.table}>
                     <TableBody>
-                        {items === [] ? <Loader /> : itemsFiltered.map(item => (
+                        {items === [] ? <div><Loader /></div> : items.map(item => (
                             <TableRow key={ item.id } hover={ true } className="TableRow" >
                                     <TableCell align="right"  >
                                         <Link to={{pathname: `/Infos/${pageInit}/${item.id}`}} className="routeInfos">
                                             {getDate(item.dates.start.localDate)}
                                         </Link>
                                     </TableCell>
-                                    <TableCell component="th" scope="row">
+                                    <TableCell component="th" scope="row" className="middleCell">
                                         <Link to={{pathname: `/Infos/${pageInit}/${item.id}`}} className="routeInfos">
-                                            {item.name}
+                                            <div id="name">{item.name}</div>
                                         </Link>
                                     </TableCell>
                                     <TableCell align="right" className="lastCell" >
@@ -86,24 +82,25 @@ function TablePag(props) {
                             <TableCell></TableCell>
                             <TableCell></TableCell>
                             <TableCell id="paginationCell">
-                                <Fab 
-                                    onClick={() => goBack()} 
-                                    className="tabButton" 
-                                    disabled={pageInit === 0}
-                                >
-                                    <Link to={`/${parseInt(pageInit) - 1}`} >
+                                <Link to={`/${parseInt(pageInit) - 1}`} >
+                                    <Fab 
+                                        onClick={() => goPreviousPageTable()} 
+                                        className="tabButton" 
+                                        disabled={pageInit === 0}
+                                    >
                                         <img src="/assets/backIcon.svg" />
-                                    </Link>
-                                </Fab>
+                                    </Fab>
+                                </Link>
                                 <div>{parseInt(pageInit) + 1}</div>
-                                <Fab 
-                                    onClick={() => goNext()} 
-                                    className="tabButton"
-                                >
-                                    <Link to={`/${parseInt(pageInit) + 1}`} >
+                                <Link to={`/${parseInt(pageInit) + 1}`} >
+                                    <Fab 
+                                        onClick={() => goNextPageTable()} 
+                                        className="tabButton"
+                                        disabled={parseInt(pageInit) + 1 === totalPages}
+                                    >
                                         <img src="/assets/nextIcon.svg" />
-                                    </Link>
-                                </Fab>
+                                    </Fab>
+                                </Link>
                             </TableCell>
                         </TableRow>
                     </TableFooter>

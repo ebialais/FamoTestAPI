@@ -76,17 +76,20 @@ export default class Infos extends Component {
                 )}
                 <div id="InfosContent">
                     <h1 id="InfosName">{item[0].name}</h1>
-                    <p id="InfosDate">{getDate(item[0].dates.start.localDate)}</p>
-                    <h3 id="InfosPlace">{item[0]._embedded.venues[0].name}</h3>
-                    <div id="InfosAddress">
-                        <p>
-                            {item[0]._embedded.venues[0].address.line1  + ", "}
-                            {item[0]._embedded.venues[0].postalCode + " "} 
-                            {item[0]._embedded.venues[0].city.name + "."}
-                        </p>
+                    <div id="Lieu">
+                        <p id="InfosDate">{getDate(item[0].dates.start.localDate)}</p>
+                        <h3 id="InfosPlace">{item[0]._embedded.venues[0].name}</h3>
+                        <div id="InfosAddress">
+                            <p>
+                                {item[0]._embedded.venues[0].address.line1  + ", "}
+                                {item[0]._embedded.venues[0].postalCode + " "} 
+                                {item[0]._embedded.venues[0].city.name + "."}
+                            </p>
+                        </div>
                     </div>
                     <div id="InfosChip">
                         <ChipsArray 
+                            size='medium'
                             items={item[0].classifications} 
                         />
                     </div>
