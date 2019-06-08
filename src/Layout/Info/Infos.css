@@ -2,6 +2,7 @@
     margin: 80px 0 0 0;
     padding: 0; 
     font-family: 'Roboto', sans-serif;
+    background-color: #edf8ded3;
 }
 .Header{
     width: 100vw;
@@ -28,11 +29,8 @@
     width: 100vw;
     font-family: 'Roboto', sans-serif !important;
     font-size: 1.2em;
-}
-#PriceTable{
-    width: 40vw;
-    min-width: 450px;
-    margin: auto;
+    background-color: #c6e499;
+    padding-bottom: 25px;
 }
 #InfosName {
     height: 100px;
@@ -55,7 +53,7 @@
 }
 #InfosChip{
     width: 70vw;
-    margin: 70px auto;
+    margin: 40px auto;
 }
 .MuiChip-label{
     font-size: 16px !important;
@@ -63,4 +61,16 @@
 #InfosPrice {
     margin-top: 70px;
     font-size: 1.2em;
+}
+#PriceTableContainer{
+    width: 40vw;
+    min-width: 350px;
+    margin: auto;
+}
+
+@media only screen and (max-width: 400px) {
+    #InfosName {
+        font-size: 5vw;
+    }
+    
 }

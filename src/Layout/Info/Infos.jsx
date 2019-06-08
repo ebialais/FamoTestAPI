@@ -94,7 +94,7 @@ export default class Infos extends Component {
                         />
                     </div>
                     <h4>Prix :</h4>
-                    <div id="PriceTable">
+                    <div id="PriceTableContainer">
                         <PriceTable 
                             prices={item[0].priceRanges}
                         />

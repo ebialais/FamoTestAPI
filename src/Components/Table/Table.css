@@ -1,30 +1,31 @@
 .TableRow {
     height: 120px;
     border-bottom: 1px solid #e9e8e8;
-    
 }
 .TableRow:hover {
     box-shadow: 2px 2px  #a2d650;
 }
-.MuiTableCell-root {
+.MuiTableCell-root.cell {
     height: 100px;
-    border: none !important;
-    padding: 0 !important;
+    border: none;
+    padding: 0 5px;
+    font-size: 1em;
 }
-.middleCell {
+
+.MuiTableCell-root.middleCell {
     font-weight: bold !important;
 }
-#name {
+.name {
     text-transform: uppercase;
 }
-.MuiTableCell-root:last-child{
+.MuiTableCell-root.cell:last-child{
     width: 150px !important;
 }
 #divImg {
     width: 142px;
     height: 100px;
 }
-#imageCell {
+.imageCell {
     width: 150px;
     margin-top: 50px;
     transform: translateY(-50%);
@@ -34,12 +35,11 @@
     text-decoration: none;
     display: block;
     color: inherit;
-    padding: 5px 10px;
     width: inherit;
     height: inherit;
     display: flex;
+    justify-content: center;
     align-items: center !important;
-    padding: 0 20px;
 }
 #paginationRow {
     width: 80vw;
@@ -57,4 +57,9 @@
 }
 .MuiFab-root.Mui-disabled{
     opacity: 0.3;
+}
+@media only screen and (max-width: 400px) {
+    .MuiTableCell-root.cell {
+        font-size: 0.8em;
+    }
 }

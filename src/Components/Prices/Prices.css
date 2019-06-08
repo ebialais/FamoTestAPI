@@ -1,7 +1,11 @@
-/* .MuiTable-root {
-    width: 60vw;
-    margin: auto;
-} */
-.MuiTableCell-root{
-    /* padding: 10px; */
+
+#PriceTable .cellPrice{
+    font-size: 1em;
+    padding: 2px;
+    min-width: 110px;
+}
+@media only screen and (max-width: 400px) {
+    #PriceTable .cellPrice{
+        font-size: 0.9em;
+    }
 }
