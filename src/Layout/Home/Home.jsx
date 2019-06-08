@@ -3,6 +3,7 @@ import axios from 'axios';
 import TablePag from '../../Components/Table/Table';
 import './Home.css';
 import Loader from '../../Components/Loader/Loader';
+import { conditionalExpression } from '@babel/types';
 
 export default class Home extends Component {
     constructor(props) {
@@ -12,19 +13,25 @@ export default class Home extends Component {
             isLoaded: false,
             items: [],
             page: 0,
+            newPage: 0, 
             filter : "",
         };
         this.handleFilter = this.handleFilter.bind(this);
     }
 
     componentDidMount() { 
-        this.callAPI()
+        let page
+        this.props.location == null ? page = this.state.page : page = parseInt(this.props.location.state.page)
+        this.setState({page: page}, () => this.callAPI())
     }
+
     callAPI = () => {
-        const Key = 'DJSMWWb3Ire4KJmZFdkAmo5FGS116cCj';
+        const KEY = 'DJSMWWb3Ire4KJmZFdkAmo5FGS116cCj';
+
         axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?countryCode=BE&apikey=`
-                    + Key
-                    + `&size=10&page=${this.state.page}`)
+                    + KEY
+                    + `&size=15&page=`
+                    + this.state.page )
         .then(
         (result) => {
             let items = this.state.items
@@ -44,7 +51,7 @@ export default class Home extends Component {
     }
     
     updatePage = (newPage) => {
-        this.setState({page: newPage}, () => this.callAPI())
+        this.setState({page: newPage}, () => this.callAPI(this.state.page))
     }
 
     handleFilter = (e) => {

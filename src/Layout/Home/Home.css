@@ -1,3 +1,28 @@
+.Header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+    margin: 0;
+    height: 80px;
+    line-height: 80px;
+    background-color: #95cc41;
+    color: white;
+    /* padding: 0 100px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+h1 {
+    margin: 0 0 0 10vw;
+    float: left;
+}
+#searchBar {
+    width: 20vw;
+    height: 25px;
+    margin: 0 10vw 0 0;
+}
 #Home {
     width: 100vw;
 }
@@ -5,21 +30,4 @@
     width: 80vw !important;
     margin: 120px auto;
     min-width: 500px;
-}
-.Header{
-    width: 100vw;
-    margin: 0;
-    height: 80px;
-    line-height: 80px;
-    background-color: #95cc41;
-    color: white;
-    padding: 5px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-h1 {
-    margin: 0 0 0 60px;
-    float: left;
 }

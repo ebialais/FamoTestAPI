@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Layout/Home/Home';
@@ -12,7 +12,8 @@ function App() {
       <Router basename='/TicketMaster'>
         <Switch>
           <Route path="/" exact render={()=>(<Home />)} />
-          <Route path="/Infos/:id" component={Infos} />
+          <Route path="/:page" exact component={Home} />
+          <Route path="/Infos/:page/:id"  component={Infos} />
         </Switch>
       </Router>
     </div>

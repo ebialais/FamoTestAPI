@@ -39,18 +39,37 @@ export default class Infos extends Component {
         }
         );
     }
+
+    returnBack = () => {
+        // console.log("Info", p)
+        // console.log("djedou" , this.props.match.params.page)
+        let page = this.props.match.params.page
+        this.props.history.push({
+            pathname: `/${page}`,
+            state: { page: page }
+        
+        })
+    }
     render (){
+
+        // const { page } = this.props;
+        // console.log("props router link", this.props.match.params.page)
         const { error, isLoaded, item } = this.state;
         if (error) {
             return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {
             return <Loader />;
         } else {
-            console.log(item[0])
+            // console.log(this.props.history)
             return (
             <div id="Infos">
                 <div className="Header">
                     <h1>On stage</h1>
+                    <button 
+                        onClick={()=>this.returnBack()}
+                    >
+                        Back
+                    </button>
                 </div>
                 { item[0].images.map(image =>
                     image.width === 1136 && <img 
