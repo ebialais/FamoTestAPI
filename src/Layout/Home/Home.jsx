@@ -3,7 +3,6 @@ import axios from 'axios';
 import TablePag from '../../Components/Table/Table';
 import './Home.css';
 import Loader from '../../Components/Loader/Loader';
-import { conditionalExpression } from '@babel/types';
 
 export default class Home extends Component {
     constructor(props) {
