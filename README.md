@@ -17,7 +17,7 @@ a showcase of the app (github pages)
 
 ## Getting Started
 
-The API choose is available at: https://developer.ticketmaster.com/products-and-docs/apis/getting-started/
+The chosen API is available at: https://developer.ticketmaster.com/products-and-docs/apis/getting-started/
 
 The repository hosting the project is : https://github.com/ebialais/FamoTestAPI
 
