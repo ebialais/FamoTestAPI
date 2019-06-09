@@ -8,7 +8,7 @@ function App() {
   
   return (
     <div className="App">
-      <Router basename='/TicketMaster'>
+      <Router basename='/FamoTestAPI'>
         <Switch>
           <Route path="/" exact render={()=>(<Home />)} />
           <Route path="/:page" exact component={Home} />
