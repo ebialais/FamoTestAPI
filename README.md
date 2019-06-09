@@ -1,68 +1,37 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# OnStage
 
-## Available Scripts
+React.js project consisting of the integration of an API (my choice from the following list: https://github.com/toddmotto/public-apis).
 
-In the project directory, you can run:
+Data had to be displayed in a table with first elements of the API, on clic in the table, the full description of the item had to be displaying.
 
-### `npm start`
+ ## Requirements:
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The API choice needs to make sense in a table format
+The data table has to be max five columns and must be paginated
+Use React and Material-UI
+Design and UI matter: give them love
+Within a week, provide:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+the code, versioned in Git and 
+a showcase of the app (github pages)
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The API choose is available at: https://developer.ticketmaster.com/products-and-docs/apis/getting-started/
+The repository hosting the project is : https://github.com/ebialais/FamoTestAPI
+The showcase of the app is available at: https://ebialais.github.io/FamoTestAPI/
 
-### `npm run build`
+## Visual
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Laptop View](public/assets/screenshots/laptopView.png)
+![iPad View](public/assets/screenshots/ipadView.png)
+![iPhone View](public/assets/screenshots/iphoneView.png)
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Built With
+- React.js
+- Matrail-UI, CSS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Versioning
+We use Github Projects for versioning. For the versions available, see the tags on this repository.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+---
