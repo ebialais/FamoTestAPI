@@ -63,7 +63,7 @@ export default class Infos extends Component {
                         onClick={()=>this.returnBack()}
                         id="closeButton"
                     >
-                        <img src="assets/closeIcon.svg" />
+                        <img src="/Assets/closeIcon.svg" />
                     </Fab>
                 </div>
                 { item[0].images.map(image =>

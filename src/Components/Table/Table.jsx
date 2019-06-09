@@ -73,7 +73,7 @@ function TablePag(props) {
                                         className="tabButton" 
                                         disabled={pageInit === 0}
                                     >
-                                        <img src="assets/backIcon.svg" />
+                                        <img src="/Assets/backIcon.svg" />
                                     </Fab>
                                 </Link>
                                 <div>{parseInt(pageInit) + 1}</div>
@@ -83,7 +83,7 @@ function TablePag(props) {
                                         className="tabButton"
                                         disabled={parseInt(pageInit) + 1 === totalPages}
                                     >
-                                        <img src="assets/nextIcon.svg" />
+                                        <img src="/Assets/nextIcon.svg" />
                                     </Fab>
                                 </Link>
                             </TableCell>
