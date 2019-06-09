@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "97966a7f453374ed3b03e829a57c1384",
+    "revision": "112ae9c724ce37340419a4f6806dc9fc",
     "url": "/FamoTestAPI/index.html"
   },
   {
-    "revision": "d71126fc5936b458e3a6",
+    "revision": "a8616e79b04c1b724568",
     "url": "/FamoTestAPI/static/css/main.8034ea35.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/FamoTestAPI/static/js/2.cf3fc958.chunk.js"
   },
   {
-    "revision": "d71126fc5936b458e3a6",
-    "url": "/FamoTestAPI/static/js/main.9cabd866.chunk.js"
+    "revision": "a8616e79b04c1b724568",
+    "url": "/FamoTestAPI/static/js/main.ec1a250a.chunk.js"
   },
   {
     "revision": "932e5a02b007674bee95",
