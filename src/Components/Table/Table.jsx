@@ -1,5 +1,4 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -12,22 +11,8 @@ import './Table.css';
 import getDate from '../../Util/getDate';
 import Fab from '@material-ui/core/Fab';
 
-// const useStyles2 = makeStyles(theme => ({
-//     root: {
-//         width: '100%',
-//         marginTop: theme.spacing(3),
-//     },
-//     table: {
-//         minWidth: 500,
-//     },
-//     tableWrapper: {
-//         overflowX: 'auto',
-//     },
-// }));
-
 function TablePag(props) {
     const { updatePage, pageInit, items, totalPages } = props
-    // const classes = useStyles2();
     
     function goPreviousPageTable(){
         let newPage = pageInit - 1
@@ -49,37 +34,31 @@ function TablePag(props) {
     }
 
     return (
-        <Paper 
-            // className={classes.root}
-        >
-            <div 
-                // className={classes.tableWrapper}
-            >
-                <Table  
-                    // className={classes.table}
-                >
+        <Paper>
+            <div>
+                <Table>
                     <TableBody>
                         {items === [] ? <div><Loader /></div> : items.map(item => (
                             <TableRow key={ item.id } hover={ true } className="TableRow" >
-                                    <TableCell align="right"  className="cell firstCell">
-                                        <Link to={{pathname: `/Infos/${pageInit}/${item.id}`}} className="routeInfos">
-                                            {getDate(item.dates.start.localDate)}
-                                        </Link>
-                                    </TableCell>
-                                    <TableCell component="th" align="left" scope="row" className="cell middleCell">
-                                        <Link to={{pathname: `/Infos/${pageInit}/${item.id}`}} className="routeInfos">
-                                            <div className="name">{item.name}</div>
-                                        </Link>
-                                    </TableCell>
-                                    <TableCell align="right" className="cell lastCell" >
-                                        <Link to={{pathname: `/Infos/${pageInit}/${item.id}`}} className="routeInfos">
-                                            <div id="divImg">
-                                                { item.images && item.images.length > 0 ? 
-                                                <img src={item.images[0].url}  className="imageCell" alt={item.name} /> : 
-                                                "Pas d'image" }
-                                            </div>
-                                        </Link>
-                                    </TableCell>
+                                <TableCell align="right"  className="cell firstCell">
+                                    <Link to={{pathname: `/Infos/${pageInit}/${item.id}`}} className="routeInfos">
+                                        {getDate(item.dates.start.localDate)}
+                                    </Link>
+                                </TableCell>
+                                <TableCell component="th" align="left" scope="row" className="cell middleCell">
+                                    <Link to={{pathname: `/Infos/${pageInit}/${item.id}`}} className="routeInfos">
+                                        <div className="name">{item.name}</div>
+                                    </Link>
+                                </TableCell>
+                                <TableCell align="right" className="cell lastCell" >
+                                    <Link to={{pathname: `/Infos/${pageInit}/${item.id}`}} className="routeInfos">
+                                        <div id="divImg">
+                                            { item.images && item.images.length > 0 ? 
+                                            <img src={item.images[0].url}  className="imageCell" alt={item.name} /> : 
+                                            "Pas d'image" }
+                                        </div>
+                                    </Link>
+                                </TableCell>
                             </TableRow> 
                         ))}
                     </TableBody>

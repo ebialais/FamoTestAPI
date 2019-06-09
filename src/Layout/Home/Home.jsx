@@ -14,7 +14,6 @@ export default class Home extends Component {
             page: 0,
             newPage: 0, 
             filter : " ",
-            isFiltered : false,
             totalPages : 0
         };
 
@@ -37,17 +36,14 @@ export default class Home extends Component {
                 + this.state.filter)
         .then(
         (result) => {
-            // let items = this.state.items
+            let items = this.state.items
             if (!result.data._embedded) {
                 this.setState({
-                    items : [
-                        // "Désolé nous n'avons pas trouvé de resultat cncernant votre recherche"
-                    ],
+                    items : [],
                     isLoaded : true,
                     totalPages: 0,
                 })
             } else {
-                // items = result.data._embedded.events
                 this.setState({
                     isLoaded: true,
                     items: result.data._embedded.events,
@@ -68,29 +64,25 @@ export default class Home extends Component {
     }
 
     changeFilter = (e) => {
-        // e.preventDefault()
         let filter = e.target.value.toLowerCase()
         this.setState({
             filter: filter,
             page: 0,
-            // isFiltered: true,
-        }, ()=>console.log("changes done", this.state))
+        })
     }
-    
+
     submitFilter = (e) => {
         e.preventDefault();
-        console.log("submit")
         this.callAPI()
     }
 
     render (){
-        const { error, isLoaded, items, filter, page } = this.state;
+        const { error, isLoaded, items, page } = this.state;
         if (error) {
             return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {
             return <Loader />;
         } else {
-            console.log(this.state)
             return (
                 <div id="Home">
                     <div className="Header">
@@ -99,7 +91,7 @@ export default class Home extends Component {
                             <input 
                                 type="text" 
                                 className="input" 
-                                placeholder="Search..." 
+                                placeholder="Recherche par mot-clé" 
                                 onChange={(e) => this.changeFilter(e)}
                                 id="searchBar" 
                             />

@@ -8,7 +8,6 @@ function App() {
   
   return (
     <div className="App">
-      
       <Router basename='/TicketMaster'>
         <Switch>
           <Route path="/" exact render={()=>(<Home />)} />

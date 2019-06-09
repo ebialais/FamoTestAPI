@@ -23,12 +23,12 @@ function ChipsArray(props) {
         <div >
             {items.map(item => {
                 return (
-                <Chip 
-                    id="Chips"
-                    key={item.genre.id}
-                    label={item.genre.name}
-                    className={classes.chip}
-                />
+                    <Chip 
+                        id="Chips"
+                        key={item.genre.id}
+                        label={item.genre.name}
+                        className={classes.chip}
+                    />
                 );
             })}
             {items.map(item => {

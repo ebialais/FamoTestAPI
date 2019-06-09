@@ -6,6 +6,7 @@ import './Loader.css';
 const useStyles = makeStyles(theme => ({
     progress: {
         margin: theme.spacing(2),
+        color: "#95cc41"
     },
 }));
 
