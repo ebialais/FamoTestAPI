@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/FamoTestAPI/static/css/main.8034ea35.chunk.css",
+    "main.js": "/FamoTestAPI/static/js/main.d83993e8.chunk.js",
+    "main.js.map": "/FamoTestAPI/static/js/main.d83993e8.chunk.js.map",
+    "runtime~main.js": "/FamoTestAPI/static/js/runtime~main.5852a972.js",
+    "runtime~main.js.map": "/FamoTestAPI/static/js/runtime~main.5852a972.js.map",
+    "static/js/2.cf3fc958.chunk.js": "/FamoTestAPI/static/js/2.cf3fc958.chunk.js",
+    "static/js/2.cf3fc958.chunk.js.map": "/FamoTestAPI/static/js/2.cf3fc958.chunk.js.map",
+    "index.html": "/FamoTestAPI/index.html",
+    "precache-manifest.9bc74414b6014eb750f9412109e10b92.js": "/FamoTestAPI/precache-manifest.9bc74414b6014eb750f9412109e10b92.js",
+    "service-worker.js": "/FamoTestAPI/service-worker.js",
+    "static/css/main.8034ea35.chunk.css.map": "/FamoTestAPI/static/css/main.8034ea35.chunk.css.map"
+  }
+}
