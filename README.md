@@ -23,9 +23,9 @@ The showcase of the app is available at: https://ebialais.github.io/FamoTestAPI/
 
 ## Visual
 
-![Laptop View](Assets/screenshots/laptopView.png)
-![iPad View](Assets/screenshots/ipadView.png)
-![iPhone View](Assets/screenshots/iphoneView.png)
+![Laptop View](public/Assets/screenshots/laptopView.png)
+![iPad View](public/Assets/screenshots/ipadView.png)
+![iPhone View](public/Assets/screenshots/iphoneView.png)
 
 ## Built With
 - React.js
