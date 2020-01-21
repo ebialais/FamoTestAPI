@@ -17,15 +17,17 @@ a showcase of the app (github pages)
 
 ## Getting Started
 
-The API choose is available at: https://developer.ticketmaster.com/products-and-docs/apis/getting-started/
+The chosen API is available at: https://developer.ticketmaster.com/products-and-docs/apis/getting-started/
+
 The repository hosting the project is : https://github.com/ebialais/FamoTestAPI
+
 The showcase of the app is available at: https://ebialais.github.io/FamoTestAPI/
 
 ## Visual
 
-![Laptop View](public/assets/screenshots/laptopView.png)
-![iPad View](public/assets/screenshots/ipadView.png)
-![iPhone View](public/assets/screenshots/iphoneView.png)
+![Laptop View](public/Assets/screenshots/laptopView.png)
+![iPad View](public/Assets/screenshots/ipadView.png)
+![iPhone View](public/Assets/screenshots/iphoneView.png)
 
 ## Built With
 - React.js
