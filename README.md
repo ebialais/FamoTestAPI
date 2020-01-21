@@ -31,7 +31,7 @@ The showcase of the app is available at: https://ebialais.github.io/FamoTestAPI/
 
 ## Built With
 - React.js
-- Matrail-UI, CSS
+- Material-UI, CSS
 
 ## Versioning
 We use Github Projects for versioning. For the versions available, see the tags on this repository.
